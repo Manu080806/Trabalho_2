@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 
 #include "../includes/types.h"
 #include "../includes/tools.h"
@@ -24,7 +25,7 @@ void mostrar_dados_jogadores(no_jogadores *jogadores){
     printf("Valor de passe do jogador: %.2f\n", jogadores->dados_jogador.valor_passe);
     printf("Valor de compra do jogador: %.2f\n", jogadores->dados_jogador.valor_compra);
     printf("Salario: %.2f\n", jogadores->dados_jogador.salario);
-    printf("Estado: %d\n", jogadores->dados_jogador.status.estado);
+    printf("Estado: %s\n", jogadores->dados_jogador.status.estado);
     if (jogadores->dados_jogador.status.estado == "inativo") {
         printf("Data da inativação: %d/%d/%d;", jogadores->dados_jogador.status.dt.dia, jogadores->dados_jogador.status.dt.mes, jogadores->dados_jogador.status.dt.ano);
         printf("Motivo da inativação: %s\n", jogadores->dados_jogador.status.motivo);

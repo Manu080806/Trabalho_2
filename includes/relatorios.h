@@ -20,5 +20,4 @@ void valor_doTime(no_jogadores *soma);
 //Relatório de aproveitamento do time (jogos vencidos pelo total de jogos realizados)
 void aproveitamento(no_partidas *jogos);
 
-
 #endif

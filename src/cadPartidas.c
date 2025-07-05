@@ -23,7 +23,7 @@ no_partidas *localizar_ultimo_partidas(no_partidas *ptr_lista_ptd){
     return ptr_lista_ptd;
 }
 // registra uma nova partida
-no_partidas *novo_registro_rh()
+no_partidas *nova_partida()
 {
     no_partidas *novo;
 
@@ -106,6 +106,3 @@ void insere_fim_partidas(no_partidas *nova_partida, lista_partidas *lista_ptd){
         ultimo->prox_partida = nova_partida;
     }
 }
-
-//exclui a partida da lista
-void excluir_registro_partidas(no_partidas *registro_ptd, lista_partidas *lista_ptd);

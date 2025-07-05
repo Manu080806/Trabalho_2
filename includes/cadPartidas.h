@@ -11,7 +11,7 @@ void inicializa_lista_partidas(lista_partidas *lista_ptd);
 // localiza o último registro de partida
 no_partidas *localizar_ultimo_partidas(no_partidas *ptr_lista_ptd);
 // registra uma nova partida
-no_partidas *novo_registro_rh();
+no_partidas *nova_partida();
 //insere a partida pelo inicio da lista
 void insere_inicio_partidas(no_partidas *nova_partida, lista_partidas *lista_ptd);
 //insere a partida pelo fim da lista

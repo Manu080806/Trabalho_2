@@ -125,9 +125,3 @@ void insere_fim_jogadores(no_jogadores *novo_jogador, lista_jogadores *lista_jog
     }
 }
 
-
-//exclui o jogador da lista
-void excluir_registro_jogadores(no_jogadores *registro_jog, lista_jogadores *lista_jog);
-
-//inativaçáo do jogador e motivo
-void inativo(no_jogadores *registro_jog , data data , string motivo);

@@ -1,5 +1,5 @@
 CC = gcc
-TARGET = rh
+TARGET = jogadores
 SOURCE = ./src
 INCLUDE = ./includes
 OBJETOS = ./objs

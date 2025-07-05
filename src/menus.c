@@ -30,10 +30,10 @@ uint8_t menu_cadastros(){
 
         printf("---Menu ---\n");
         printf("\n");
-        printf("1.\n");
-        printf("2.\n");
-        printf("3.\n");
-        printf("4.\n");
+        printf("1.cadastro jogadores pelo início\n");
+        printf("2.cadastro jogadores pelo fim\n");
+        printf("3.cadastro partidas pelo início\n");
+        printf("4cadastro partidas pelo fim.\n");
         printf("0.Voltar ao menu principal\n");
         printf("Qual a sua opção? ");
         scanf("%hhi", &opc);
@@ -91,10 +91,12 @@ uint8_t arquivos(){
         printf("\n");
         printf("1. Salvar lista jogadores em arquivo binário\n");
         printf("2. Salvar lista de partidas em arquivo binário\n");
-        printf("3. Salvar lista jogadores em arquivo texto (.csv) \n");
-        printf("4. Salvar lista de partidas em arquivo texto (.csv)\n");
-        printf("5. Salvar lista jogadores em arquivo HTML \n");
-        printf("6. Salvar lista de partidas em arquivo HTML\n");
+        printf("3. Salvar lista jogadores em arquivo texto (.txt) \n");
+        printf("4. Salvar lista de partidas em arquivo texto (.txt)\n");
+        printf("5. Salvar lista jogadores em arquivo texto (.csv) \n");
+        printf("6. Salvar lista de partidas em arquivo texto (.csv)\n");
+        printf("7. Salvar lista jogadores em arquivo HTML \n");
+        printf("8. Salvar lista de partidas em arquivo HTML\n");
         printf("0.Voltar ao menu principal\n");
         printf("Qual a sua opção? ");
         scanf("%hhi", &opc);
