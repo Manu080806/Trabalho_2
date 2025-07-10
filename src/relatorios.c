@@ -47,8 +47,7 @@ void result_partidas(no_partidas *resultado){
     }
 }
 //Relatório de confrontos com time adversário
-void confrontos(no_partidas *confrontos , string nome_timeadv){
-    no_partidas *ptr_atual = confrontos ;
+void confrontos(no_partidas *ptr_atual , string nome_timeadv){
     int i = 0;
 
     printf("Todos os jogos contra o time: %s\n\n", nome_timeadv);

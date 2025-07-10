@@ -28,17 +28,13 @@ no_partidas *localizar_ultimo_partidas(no_partidas *ptr_lista_ptd){
 // registra uma nova partida
 no_partidas *nova_partida()
 {
-    no_partidas *novo;
+    no_partidas *novo = NULL;
+    no_jogadores *escalado = NULL;
     char aux[T_STR];
 
     // Aloca um novo registro na heap
     novo = (no_partidas*)malloc(sizeof(no_partidas));
     if (!novo) return NULL;
-
-    novo->dados_partida.timeAdversario = NULL;
-    novo->dados_partida.local_jogo = NULL;
-    novo->dados_partida.resultado = NULL;
-    novo->dados_partida.vencedor = NULL;
 
     // Código (provisório)
     novo->dados_partida.codigo = 0;
@@ -88,6 +84,12 @@ no_partidas *nova_partida()
     strcpy(novo->dados_partida.vencedor , aux);
 
     // Time escalado
+    for (int i = 0 ; i < 11 ; i++){
+        printf("Qual jogador deseja escalar? ");
+        fgets(aux, T_STR, stdin);
+        retirar_enter(aux);
+        escalamento(escalado , aux , &novo->dados_partida.time_escalado[i]);
+    }
 
     // Quantidade de substituições
     printf("Quantidade de substituicoes: ");

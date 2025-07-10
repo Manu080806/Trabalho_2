@@ -27,18 +27,12 @@ no_jogadores *localizar_ultimo_jogador(no_jogadores *ptr_lista_jog){
 //registra um novo jogador
 no_jogadores *novo_jogador()
 {
-    no_jogadores *novo;
+    no_jogadores *novo = NULL;
     char aux[T_STR]; 
 
     // Aloca um novo registro na heap
     novo = (no_jogadores*)malloc(sizeof(no_jogadores));
     if (!novo) return NULL;
-
-    novo->dados_jogador.nome_jogador = NULL;
-    novo->dados_jogador.posicao_jogador = NULL;
-    novo->dados_jogador.status.estado = NULL;
-    novo->dados_jogador.status.motivo = NULL;
-
 
     // Código (provisório)
     novo->dados_jogador.codigo = 0;

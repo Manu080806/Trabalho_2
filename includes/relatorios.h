@@ -12,7 +12,7 @@ void faixa_idade(int inicio , int fim , no_jogadores *jogador);
 //Relatório de resultado das partidas
 void result_partidas(no_partidas *resultado);
 //Relatório de confrontos com time adversário
-void confrontos(no_partidas *confrontos , string nome_timeadv);
+void confrontos(no_partidas *ptr_atual , string nome_timeadv);
 //Relatório de jogadores vendidos
 void jogadores_vendidos(no_jogadores *ptr_lista_jog , float soma_vendaJogadores);
 //Relatório do valor do time em relação ao preço de venda dos jogadores

@@ -51,6 +51,12 @@ typedef struct lista_jogadores {
     uint8_t nr_nos_jogadores;
 }   lista_jogadores;
 
+typedef struct time_escalado{
+    uint8_t codigo;
+    char* nome_jogador;
+    char* posicao_jogador ;
+}   time_escalado;
+
 // define o tipo dados de cadastro dos jogos realizados
 typedef struct cad_jogosRealizados {
     uint8_t codigo;
@@ -59,7 +65,7 @@ typedef struct cad_jogosRealizados {
     char* local_jogo;
     char* resultado;
     char* vencedor;
-    //time escalado
+    time_escalado time_escalado[11];
     int qtd_substituicoes;
 } cad_jogosRealizados_t ;
 
