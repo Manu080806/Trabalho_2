@@ -156,4 +156,3 @@ void insere_fim_jogadores(no_jogadores *novo_jogador, lista_jogadores *lista_jog
         ultimo->prox_jogador = novo_jogador;
     }
 }
-

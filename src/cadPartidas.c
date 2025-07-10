@@ -77,6 +77,7 @@ no_partidas *nova_partida()
 
     return novo;
 }
+
 //insere a partida pelo inicio da lista
 void insere_inicio_partidas(no_partidas *nova_partida, lista_partidas *lista_ptd){
     if (!nova_partida || !lista_ptd) {

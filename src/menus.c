@@ -9,14 +9,14 @@ uint8_t menu_principal(){
 
         limpar_tela();
 
-        printf("---Menu Principal---\n");
+        printf("   Menu Principal\n");
         printf("\n");
         printf("1. Cadastros\n");
         printf("2. Menu de relatorios\n");
         printf("3. Menu de pesquisas\n");
-        printf("4. Tipos de exportação de arquivos\n");
+        printf("4. Tipos de exportacao de arquivos\n");
         printf("0. Sair do programa\n");
-        printf("Qual a sua opção? ");
+        printf("Qual a sua opcao? ");
         scanf("%hhi", &opcao);
 
         return opcao;
@@ -27,14 +27,14 @@ uint8_t menu_cadastros(){
 
         limpar_tela();
 
-        printf("---Menu ---\n");
+        printf("   Menu de casdastros \n");
         printf("\n");
-        printf("1.cadastro jogadores pelo início\n");
+        printf("1.cadastro jogadores pelo inicio\n");
         printf("2.cadastro jogadores pelo fim\n");
-        printf("3.cadastro partidas pelo início\n");
+        printf("3.cadastro partidas pelo inicio\n");
         printf("4cadastro partidas pelo fim.\n");
         printf("0.Voltar ao menu principal\n");
-        printf("Qual a sua opção? ");
+        printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
 
         return opc;
@@ -45,18 +45,18 @@ uint8_t menu_relatorios(){
 
         limpar_tela();
 
-        printf("---Menu de relatórios---\n");
+        printf("   Menu de relatorios\n");
         printf("\n");
-        printf("1. Relatório completo de jogadores\n");
-        printf("2. Relatório de jogadores por faixa de idade\n");
-        printf("3. Relatório de resultado das partidas\n");
-        printf("4. Relatório de confrontos com time adversário\n");
-        printf("5. Relatório de jogadores vendidos\n");
-        printf("6. Relatório do valor do time em relação ao preço de venda dos jogadores\n");
-        printf("7. Relatório de aproveitamento do time\n");
+        printf("1. Relatorios completo de jogadores\n");
+        printf("2. Relatorios de jogadores por faixa de idade\n");
+        printf("3. Relatorios de resultado das partidas\n");
+        printf("4. Relatorios de confrontos com time adversario\n");
+        printf("5. Relatorios de jogadores vendidos\n");
+        printf("6. Relatorios do valor do time em relação ao preço de venda dos jogadores\n");
+        printf("7. Relatorios de aproveitamento do time\n");
         printf("(jogos vencidos pelo total de jogos realizados)\n");
         printf("0.Voltar ao menu principal\n");
-        printf("Qual a sua opção? ");
+        printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
 
         return opc;
@@ -67,15 +67,15 @@ uint8_t menu_pesquisas(){
 
         limpar_tela();
 
-        printf("---Menu de pesquisa---\n");
+        printf("   Menu de pesquisa\n");
         printf("\n");
         printf("1. Localizar jogadores por nome\n");
-        printf("2. Localizar jogadores por posição em que atua\n");
-        printf("3. Localizar jogos realizados pelo nome do time adversário\n");
-        printf("4. Localizar jogador com maior salário\n");
+        printf("2. Localizar jogadores por posicao em que atua\n");
+        printf("3. Localizar jogos realizados pelo nome do time adversario\n");
+        printf("4. Localizar jogador com maior salario\n");
         printf("5. Localizar jogadores por faixa salarial\n");
         printf("0.Voltar ao menu principal\n");
-        printf("Qual a sua opção? ");
+        printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
 
         return opc;
@@ -86,10 +86,10 @@ uint8_t arquivos(){
 
         limpar_tela();
 
-        printf("---Menu opções de exportação de arquivos---\n");
+        printf("  Menu opcoes de exportacao de arquivos\n");
         printf("\n");
-        printf("1. Salvar lista jogadores em arquivo binário\n");
-        printf("2. Salvar lista de partidas em arquivo binário\n");
+        printf("1. Salvar lista jogadores em arquivo binario\n");
+        printf("2. Salvar lista de partidas em arquivo binario\n");
         printf("3. Salvar lista jogadores em arquivo texto (.txt) \n");
         printf("4. Salvar lista de partidas em arquivo texto (.txt)\n");
         printf("5. Salvar lista jogadores em arquivo texto (.csv) \n");
@@ -97,7 +97,7 @@ uint8_t arquivos(){
         printf("7. Salvar lista jogadores em arquivo HTML \n");
         printf("8. Salvar lista de partidas em arquivo HTML\n");
         printf("0.Voltar ao menu principal\n");
-        printf("Qual a sua opção? ");
+        printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
 
         return opc;
