@@ -52,7 +52,7 @@ uint8_t menu_relatorios(){
         printf("3. Relatorios de resultado das partidas\n");
         printf("4. Relatorios de confrontos com time adversario\n");
         printf("5. Relatorios de jogadores vendidos\n");
-        printf("6. Relatorios do valor do time em relação ao preço de venda dos jogadores\n");
+        printf("6. Relatorios do valor do time em relacao ao preco de venda dos jogadores\n");
         printf("7. Relatorios de aproveitamento do time\n");
         printf("(jogos vencidos pelo total de jogos realizados)\n");
         printf("0.Voltar ao menu principal\n");
