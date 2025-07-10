@@ -43,8 +43,6 @@ uint8_t menu_cadastros(){
 uint8_t menu_relatorios(){
     uint8_t opc;
 
-        limpar_tela();
-
         printf("   Menu de relatorios\n");
         printf("\n");
         printf("1. Relatorios completo de jogadores\n");
@@ -59,13 +57,13 @@ uint8_t menu_relatorios(){
         printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
 
+         limpar_tela();
+
         return opc;
 }
 // função que mostra o menu de pesquisas
 uint8_t menu_pesquisas(){
     uint8_t opc;
-
-        limpar_tela();
 
         printf("   Menu de pesquisa\n");
         printf("\n");
@@ -78,27 +76,27 @@ uint8_t menu_pesquisas(){
         printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
 
+        limpar_tela();
+
         return opc;
 }
 // função que mostra as opções de exportação 
 uint8_t arquivos(){
     uint8_t opc;
 
-        limpar_tela();
-
         printf("  Menu opcoes de exportacao de arquivos\n");
         printf("\n");
-        printf("1. Salvar lista jogadores em arquivo binario\n");
-        printf("2. Salvar lista de partidas em arquivo binario\n");
-        printf("3. Salvar lista jogadores em arquivo texto (.txt) \n");
-        printf("4. Salvar lista de partidas em arquivo texto (.txt)\n");
-        printf("5. Salvar lista jogadores em arquivo texto (.csv) \n");
-        printf("6. Salvar lista de partidas em arquivo texto (.csv)\n");
-        printf("7. Salvar lista jogadores em arquivo HTML \n");
-        printf("8. Salvar lista de partidas em arquivo HTML\n");
+        printf("1. Salvar lista jogadores em arquivo texto (.txt) \n");
+        printf("2. Salvar lista de partidas em arquivo texto (.txt)\n");
+        printf("3. Salvar lista jogadores em arquivo texto (.csv) \n");
+        printf("4. Salvar lista de partidas em arquivo texto (.csv)\n");
+        printf("5. Salvar lista jogadores em arquivo HTML \n");
+        printf("6. Salvar lista de partidas em arquivo HTML\n");
         printf("0.Voltar ao menu principal\n");
         printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
+
+        limpar_tela();
 
         return opc;
 }

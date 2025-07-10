@@ -14,8 +14,8 @@
 int main(){
 
     uint8_t opcao, sub_menu;
-    no_jogadores * jogador , *aux_jog = NULL;
-    no_partidas *partidas , *aux_ptd = NULL;
+    no_jogadores *aux_jog = NULL;
+    no_partidas *aux_ptd = NULL;
     float salario_min, salario_max;
     string nome_arq, nome_pessoa, funcao;
     char resposta;
@@ -46,7 +46,12 @@ int main(){
                         case 1: // cadastro jogadores pelo início
                             getchar();
                             aux_jog = novo_jogador();
-                            insere_inicio_jogadores(aux_jog , &lista_jogadores);
+                           if (aux_jog != NULL) {
+                                insere_inicio_jogadores(aux_jog , &lista_jogadores);
+                                printf("Jogador cadastrado com sucesso!\n");
+                            } else {
+                                printf("Falha ao cadastrar o jogador.\n");
+                            }
                             break;
 
                         case 2: // cadastro jogadores pelo fim
@@ -60,8 +65,7 @@ int main(){
                         case 4:// cadastro partidas pelo fim
                             break;
                         }
-                } while (sub_menu != 0);
-                
+                    } while (sub_menu != 0);
                     break;
 
                 case 2:do  {
@@ -71,33 +75,32 @@ int main(){
                         switch (sub_menu)
                         {
                         case 1: //Relatório completo de jogadores
-                            listar_jogadores(jogador);
+                            listar_jogadores(lista_jogadores.ptrlist_jogadores);
                             break;
 
                         case 2://Relatório de jogadores por faixa de idade
-                            faixa_idade(inicio , fim , jogador);
+                            faixa_idade(inicio , fim , lista_jogadores.ptrlist_jogadores);
                             break;
 
                         case 3://Relatório de resultado das partidas
-                            result_partidas(partidas);
+                            result_partidas(lista_partidas.ptrlist_partida);
                             break;
 
                         case 5://Relatório de confrontos com time adversário
-                            confrontos(partidas , nome_timeadv); 
+                            confrontos(lista_partidas.ptrlist_partida , nome_timeadv); 
                             break;
                         case 6://Relatório de jogadores vendidos
-                            jogadores_vendidos(jogador , soma_vendaJogadores);
+                            jogadores_vendidos(lista_jogadores.ptrlist_jogadores , soma_vendaJogadores);
                             break;
                         case 7://Relatório do valor do time em relação ao preço de venda dos jogadores
-                            valor_doTime(jogador);
+                            valor_doTime(lista_jogadores.ptrlist_jogadores);
                             break;
                         case 8://Relatório de aproveitamento do time (jogos vencidos pelo total de jogos realizados)
-                            aproveitamento(partidas , time);
+                            aproveitamento(lista_partidas.ptrlist_partida , time);
                         
                             break;
                         }
-                } while (sub_menu != 0);
-                    
+                    } while (sub_menu != 0);
                     break;
                 
                 case 3:do  {
@@ -106,71 +109,67 @@ int main(){
                         switch (sub_menu)
                         {
                         case 1://Localizar jogador por nome
-                            pesquisa_nome(nome, jogador);
+                            pesquisa_nome(nome, lista_jogadores.ptrlist_jogadores);
                             break;
 
                         case 2://Localizar jogadores por posição em que atua
-                            posicao_atua(pos_atua , jogador );
+                            posicao_atua(pos_atua , lista_jogadores.ptrlist_jogadores );
                             break;
 
                         case 3://Localizar jogos realizados pelo nome do time adversário
-                            time_adversario(adversario , partidas);
+                            time_adversario(adversario , lista_partidas.ptrlist_partida);
                             break;
 
                         case 4://Localizar jogador com maior salário
-                            maior_salario(jogador);
+                            maior_salario(lista_jogadores.ptrlist_jogadores);
                             break;
 
                         case 5://Localizar jogadores por faixa salarial
-                            faixa_salarial(salario_max , salario_min , jogador);
+                            faixa_salarial(salario_max , salario_min , lista_jogadores.ptrlist_jogadores);
                             break;
                         }
-                } while (sub_menu != 0);
-                    
+                    } while (sub_menu != 0);
                     break;
+
                 case 4:do  {
                     string nome_arq;
                     sub_menu = arquivos();
                         switch (sub_menu)
                         {
-                        case 1://salvar lista jogadores em arquivo binário
-                            salvar_jogadores_arqbin(nome_arq,jogador);
+                        case 1://exportar lista jogadores para arquivo texto
+                            exportar_jogadores_arq_txt(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
-                        case 2://salvar lista partidas em arquivo binário
-                            salvar_partidas_arqbin(nome_arq, partidas);
+                        case 2://exportar lista partidas para arquivo texto
+                            exportar_partidas_arq_txt(nome_arq, lista_partidas.ptrlist_partida);
                             break;
 
-                        case 3://exportar lista jogadores para arquivo html
-                            exportar_jogadores_html(nome_arq,jogador);
+                        case 3://exportar lista jogadores para tabela
+                            exportar_jogadores_arq_csv(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
-                        case 4://exportar lista partidas para arquivo html
-                            exportar_partidas_html(nome_arq, partidas);
+                        case 4://exportar lista partidas para tabela
+                            exportar_partidas_arq_csv(nome_arq, lista_partidas.ptrlist_partida);
                             break;
 
-                        case 5://exportar lista jogadores para arquivo texto
-                            exportar_jogadores_arq_txt(nome_arq,jogador);
+                        case 5://exportar lista jogadores para arquivo html
+                            exportar_jogadores_html(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
-                        case 6://exportar lista partidas para arquivo texto
-                            exportar_partidas_arq_txt(nome_arq, partidas);
-                            break;
-
-                        case 7://exportar lista jogadores para tabela
-                            exportar_jogadores_arq_csv(nome_arq,jogador);
-                            break;
-
-                        case 8://exportar lista partidas para tabela
-                            exportar_partidas_arq_csv(nome_arq, partidas);
+                        case 6://exportar lista partidas para arquivo html
+                            exportar_partidas_html(nome_arq, lista_partidas.ptrlist_partida);
                             break;
                         }
-                } while (sub_menu != 0);
                     
+                    } while (sub_menu != 0);
                     break;
-            
-            }
 
+                case 0:
+                    //salvar lista jogadores em arquivo binário
+                    salvar_jogadores_arqbin(nome_arq,lista_jogadores.ptrlist_jogadores);
+                    //salvar lista partidas em arquivo binário
+                    salvar_partidas_arqbin(nome_arq, lista_partidas.ptrlist_partida);
+            }
     } while (opcao != 0);
     
 

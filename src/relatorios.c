@@ -7,7 +7,8 @@
 
 //Relatório completo de jogadores
 void listar_jogadores(no_jogadores *ptr_lista_jog){
-    limpar_tela(); 
+    
+    limpar_tela();
 
     //laço responsável por percorrer a lista encadeada
     while (ptr_lista_jog) {

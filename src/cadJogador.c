@@ -66,7 +66,7 @@ no_jogadores *novo_jogador()
     getchar(); 
 
     // Posição que o jogador atua
-    printf("Posição que o jogador atua: ");
+    printf("Posicao que o jogador atua: ");
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
     novo->dados_jogador.posicao_jogador = (char*)malloc(strlen(aux) + 1);
@@ -85,7 +85,7 @@ no_jogadores *novo_jogador()
     // Salario
     printf("Salario: ");
     scanf("%f", &novo->dados_jogador.salario);
-    getchar();
+    
 
     //Se o jogador está ativo ou inativo
     printf("Estado do jogador: ");
@@ -95,11 +95,11 @@ no_jogadores *novo_jogador()
     strcpy(novo->dados_jogador.status.estado, aux);
         if (strcmp( novo->dados_jogador.status.estado , "inativo") == 0) {
             //data da inativação
-            printf("Data da inativação:");
+            printf("Data da inativacao: \n");
             printf("Dia:");
             scanf("%d", &novo->dados_jogador.status.dt.dia);
             getchar();
-            printf("Mês:");
+            printf("Mes:");
             scanf("%d", &novo->dados_jogador.status.dt.mes);
             getchar();
             printf("Ano:");
@@ -107,8 +107,7 @@ no_jogadores *novo_jogador()
             getchar();
            
             //motivo da inativação
-            getchar();
-            printf("Motivo da inativação: ");
+            printf("Motivo da inativacao: ");
             fgets(aux, T_STR, stdin);
             retirar_enter(aux);
             novo->dados_jogador.status.motivo = (char*)malloc(strlen(aux) + 1);

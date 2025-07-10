@@ -39,7 +39,6 @@ typedef struct cad_jogadores {
     jogador_inativo status ; // se o jogador está ativo ou inativo
 } cad_jogadores_t ; 
 
-
 // Define membro da lista dos jogadores cadastrados
 typedef struct no_jogadores {
     cad_jogadores_t dados_jogador;

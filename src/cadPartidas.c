@@ -40,13 +40,21 @@ no_partidas *nova_partida()
 
     // Nome do time adversário
     getchar();
-    printf("Nome do time adversário: ");
+    printf("Nome do time adversario: ");
     fgets(novo->dados_partida.timeAdversario, T_STR, stdin);
     retirar_enter(novo->dados_partida.timeAdversario);
 
     // Data da partida
-    printf("Data da partida: %d/%d/%d;", novo->dados_partida.dt_jogo.dia, novo->dados_partida.dt_jogo.mes, novo->dados_partida.dt_jogo.ano);
-    scanf("%d/%d/%d", &novo->dados_partida.dt_jogo.dia, &novo->dados_partida.dt_jogo.mes, &novo->dados_partida.dt_jogo.ano);
+    printf("Data da partida: \n");
+        printf("Dia:");
+        scanf("%d", &novo->dados_partida.dt_jogo.dia);
+        getchar();
+        printf("Mes:");
+        scanf("%d", &novo->dados_partida.dt_jogo.mes);
+        getchar();
+        printf("Ano:");
+        scanf("%d", &novo->dados_partida.dt_jogo.ano);
+        getchar();
 
     // Local onde ocorreu a partida
     printf("Local que ocorreu a partida: ");
@@ -68,8 +76,8 @@ no_partidas *nova_partida()
 
     // Time escalado
 
-    // Vencedor da partida
-    printf("Vencedor da partida: ");
+    // Quantidade de substituições
+    printf("Quantidade de substituicoes: ");
     scanf("%d",novo->dados_partida.qtd_substituicoes);
 
     // Inicializar o ponteiro proximo
