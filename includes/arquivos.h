@@ -4,14 +4,14 @@
 #include "types.h"
 
 //salvar lista jogadores em arquivo binário
-void salvar_jogadores_arqbin(string nome_arq, no_jogadores *ptr_lista_jog);
+void salvar_jogadores_arqbin(no_jogadores *ptr_lista_jog);
 //salvar lista partidas em arquivo binário
-void salvar_partidas_arqbin(string nome_arq, no_partidas *ptr_lista_ptd);
+void salvar_partidas_arqbin(no_partidas *ptr_lista_ptd);
 
 //ler arquivo binário jogadores
-void ler_jogadores_arqbin(string nome_arq, lista_jogadores *lista_jog);
+void ler_jogadores_arqbin(lista_jogadores *lista_jog);
 //ler arquivo binário partidas
-void ler_partidas_arqbin(string nome_arq, lista_partidas *lista_ptd);
+void ler_partidas_arqbin(lista_partidas *lista_ptd);
 
 //exportar lista jogadores para arquivo html
 void exportar_jogadores_html(string nome_arq, no_jogadores *lista_jog);

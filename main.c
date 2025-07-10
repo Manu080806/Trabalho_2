@@ -16,7 +16,6 @@ int main(){
     uint8_t opcao, sub_menu;
     no_jogadores *aux_jog = NULL;
     no_partidas *aux_ptd = NULL;
-    float salario_min, salario_max;
     string nome_arq, nome_pessoa, funcao;
     char resposta;
     data data;
@@ -31,8 +30,8 @@ int main(){
     inicializa_lista_partidas(&lista_partidas);
 
     // Carrega dados arquivo
-    ler_jogadores_arqbin("dados_jogadores.bin", &lista_jogadores);
-    ler_partidas_arqbin("dados_partidas.bin", &lista_partidas);
+    ler_jogadores_arqbin(&lista_jogadores);
+    ler_partidas_arqbin(&lista_partidas);
 
     //ordenar_em_ordem_alfabetica 
 
@@ -92,21 +91,23 @@ int main(){
                             result_partidas(lista_partidas.ptrlist_partida);
                             break;
 
-                        case 5://Relatório de confrontos com time adversário
+                        case 4://Relatório de confrontos com time adversário
+                            getchar();
                             printf("Contra qual time sao as partidas que desejas? ");
                             fgets(nome_timeadv, T_STR, stdin);
+                            getchar();
                             confrontos(lista_partidas.ptrlist_partida , nome_timeadv); 
                             break;
 
-                        case 6://Relatório de jogadores vendidos
+                        case 5://Relatório de jogadores vendidos
                             jogadores_vendidos(lista_jogadores.ptrlist_jogadores , soma_vendaJogadores);
                             break;
 
-                        case 7://Relatório do valor do time em relação ao preço de venda dos jogadores
+                        case 6://Relatório do valor do time em relação ao preço de venda dos jogadores
                             valor_doTime(lista_jogadores.ptrlist_jogadores);
                             break;
 
-                        case 8://Relatório de aproveitamento do time (jogos vencidos pelo total de jogos realizados)
+                        case 7://Relatório de aproveitamento do time (jogos vencidos pelo total de jogos realizados)
                             aproveitamento(lista_partidas.ptrlist_partida , time);
                             break;
                         }
@@ -115,10 +116,15 @@ int main(){
                 
                 case 3:do  {
                     string nome , pos_atua , adversario;
+                    float salario_min, salario_max;
                     sub_menu = menu_pesquisas();
                         switch (sub_menu)
                         {
                         case 1://Localizar jogador por nome
+                            getchar();
+                            printf("Qual o jogador que desejas localizar? ");
+                            fgets(nome, T_STR, stdin);
+                            getchar();
                             pesquisa_nome(nome, lista_jogadores.ptrlist_jogadores);
                             break;
 
@@ -127,6 +133,10 @@ int main(){
                             break;
 
                         case 3://Localizar jogos realizados pelo nome do time adversário
+                            getchar();
+                            printf("Qual o time adversário? ");
+                            fgets(adversario, T_STR, stdin);
+                            getchar();
                             time_adversario(adversario , lista_partidas.ptrlist_partida);
                             break;
 
@@ -135,6 +145,10 @@ int main(){
                             break;
 
                         case 5://Localizar jogadores por faixa salarial
+                            printf("Qual o salario minimo da faixa desejada? ");
+                            scanf("%d", &salario_min);
+                            printf("Qual o salario maximo da faixa desejada? ");
+                            scanf("%d", &salario_max);
                             faixa_salarial(salario_max , salario_min , lista_jogadores.ptrlist_jogadores);
                             break;
                         }
@@ -147,26 +161,50 @@ int main(){
                         switch (sub_menu)
                         {
                         case 1://exportar lista jogadores para arquivo texto
+                            getchar();
+                            printf("Digite o nome do arquivo e finalize com: .txt \n");
+                            fgets(nome_arq, T_STR, stdin);
+                            getchar();
                             exportar_jogadores_arq_txt(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
                         case 2://exportar lista partidas para arquivo texto
+                            getchar();
+                            printf("Digite o nome do arquivo e finalize com: .txt \n");
+                            fgets(nome_arq, T_STR, stdin);
+                            getchar();
                             exportar_partidas_arq_txt(nome_arq, lista_partidas.ptrlist_partida);
                             break;
 
                         case 3://exportar lista jogadores para tabela
+                            getchar();
+                            printf("Digite o nome do arquivo e finalize com: .csv \n");
+                            fgets(nome_arq, T_STR, stdin);
+                            getchar();
                             exportar_jogadores_arq_csv(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
                         case 4://exportar lista partidas para tabela
+                            getchar();
+                            printf("Digite o nome do arquivo e finalize com: .csv \n");
+                            fgets(nome_arq, T_STR, stdin);
+                            getchar();
                             exportar_partidas_arq_csv(nome_arq, lista_partidas.ptrlist_partida);
                             break;
 
                         case 5://exportar lista jogadores para arquivo html
+                            getchar();
+                            printf("Digite o nome do arquivo e finalize com: .html \n");
+                            fgets(nome_arq, T_STR, stdin);
+                            getchar();
                             exportar_jogadores_html(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
                         case 6://exportar lista partidas para arquivo html
+                            getchar();
+                            printf("Digite o nome do arquivo e finalize com: .html \n");
+                            fgets(nome_arq, T_STR, stdin);
+                            getchar();
                             exportar_partidas_html(nome_arq, lista_partidas.ptrlist_partida);
                             break;
                         }
@@ -176,9 +214,9 @@ int main(){
 
                 case 0:
                     //salvar lista jogadores em arquivo binário
-                    salvar_jogadores_arqbin(nome_arq,lista_jogadores.ptrlist_jogadores);
+                    salvar_jogadores_arqbin(lista_jogadores.ptrlist_jogadores);
                     //salvar lista partidas em arquivo binário
-                    salvar_partidas_arqbin(nome_arq, lista_partidas.ptrlist_partida);
+                    salvar_partidas_arqbin( lista_partidas.ptrlist_partida);
             }
     } while (opcao != 0);
     

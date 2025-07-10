@@ -69,9 +69,7 @@ void escalamento(no_jogadores *jogadores , string nome , time_escalado *escalado
     while (jogadores){
         if(strcmp(jogadores->dados_jogador.nome_jogador , nome) == 0){
             escalado->codigo = jogadores->dados_jogador.codigo;
-            escalado->nome_jogador = (char*)malloc(strlen(jogadores->dados_jogador.nome_jogador) + 1);
             strcpy(escalado->nome_jogador , jogadores->dados_jogador.nome_jogador); 
-            escalado->posicao_jogador = (char*)malloc(strlen(jogadores->dados_jogador.posicao_jogador) + 1);
             strcpy(escalado->posicao_jogador , jogadores->dados_jogador.posicao_jogador); 
         }
     }

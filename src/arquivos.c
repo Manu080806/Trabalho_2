@@ -6,13 +6,13 @@
 #include "../includes/cadPartidas.h"
 
 //salvar lista jogadores em arquivo binário
-void salvar_jogadores_arqbin(string nome_arq, no_jogadores *ptr_lista_jog){
+void salvar_jogadores_arqbin(no_jogadores *ptr_lista_jog){
     // Abre arquivo
-    FILE *fp = fopen(nome_arq, "wb");
+    FILE *fp = fopen("dados_jogadores.bin", "wb");
 
     // Verifica se o arquivo foi aberto
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo %s\n", nome_arq);
+        printf("Erro ao tentar abrir o arquivo \n");
         return;
     }
 
@@ -26,13 +26,13 @@ void salvar_jogadores_arqbin(string nome_arq, no_jogadores *ptr_lista_jog){
     fclose(fp);
 }
 //salvar lista partidas em arquivo binário
-void salvar_partidas_arqbin(string nome_arq, no_partidas *ptr_lista_ptd){
+void salvar_partidas_arqbin(no_partidas *ptr_lista_ptd){
     // Abre arquivo
-    FILE *fp = fopen(nome_arq, "wb");
+    FILE *fp = fopen("dados_partidas.bin", "wb");
 
     // Verifica se o arquivo foi aberto
     if (!fp) {
-        printf("Erro ao tentar abrir o arquivo %s\n", nome_arq);
+        printf("Erro ao tentar abrir o arquivo\n");
         return;
     }
 
@@ -47,9 +47,9 @@ void salvar_partidas_arqbin(string nome_arq, no_partidas *ptr_lista_ptd){
 }
 
 //ler arquivo binário jogadores
-void ler_jogadores_arqbin(string nome_arq, lista_jogadores *lista_jog){
+void ler_jogadores_arqbin(lista_jogadores *lista_jog){
     // Abre arquivo
-    FILE *fp = fopen(nome_arq, "rb");
+    FILE *fp = fopen("dados_jogadores.bin", "rb");
 
      // Verifica se o arquivo foi aberto
     if(!fp) {
@@ -74,9 +74,9 @@ void ler_jogadores_arqbin(string nome_arq, lista_jogadores *lista_jog){
     fclose(fp);
 }
 //ler arquivo binário partidas
-void ler_partidas_arqbin(string nome_arq, lista_partidas *lista_ptd){
+void ler_partidas_arqbin(lista_partidas *lista_ptd){
     // Abre arquivo
-    FILE *fp = fopen(nome_arq, "rb");
+    FILE *fp = fopen("dados_partidas.bin", "rb");
 
      // Verifica se o arquivo foi aberto
     if(!fp) {

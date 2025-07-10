@@ -9,5 +9,6 @@ void limpar_tela();
 void mostrar_dados_jogadores(no_jogadores *jogadores);
 void mostrar_dados_partidas(no_partidas *partida);
 int qtd_partidas(no_partidas *partidas);
+void escalamento(no_jogadores *jogadores , string nome , time_escalado *escalado);
 
 #endif

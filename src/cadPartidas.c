@@ -44,7 +44,6 @@ no_partidas *nova_partida()
     printf("Nome do time adversario: ");
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
-    novo->dados_partida.timeAdversario = (char*)malloc(strlen(aux) + 1);
     strcpy(novo->dados_partida.timeAdversario , aux);
 
     // Data da partida
@@ -64,7 +63,6 @@ no_partidas *nova_partida()
     getchar();
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
-    novo->dados_partida.local_jogo = (char*)malloc(strlen(aux) + 1);
     strcpy(novo->dados_partida.local_jogo , aux);
 
     // Resultado da partida
@@ -72,7 +70,6 @@ no_partidas *nova_partida()
     getchar();
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
-    novo->dados_partida.resultado = (char*)malloc(strlen(aux) + 1);
     strcpy(novo->dados_partida.resultado , aux);
 
     // Vencedor da partida
@@ -80,7 +77,6 @@ no_partidas *nova_partida()
     getchar();
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
-    novo->dados_partida.vencedor = (char*)malloc(strlen(aux) + 1);
     strcpy(novo->dados_partida.vencedor , aux);
 
     // Time escalado

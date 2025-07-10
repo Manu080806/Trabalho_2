@@ -23,18 +23,18 @@ typedef struct data {
 
 //motivo pelo qual o jogador se encontra inativo
 typedef struct jogador_inativo{
-    char* estado;
+    string estado;
     data dt;
-    char* motivo;  
+    string motivo;  
 }   jogador_inativo;
 
 // define o tipo dados de cadastro dos jogadores
 typedef struct cad_jogadores {
     uint8_t codigo;
-    char* nome_jogador;
+    string nome_jogador;
     int idade_jogador ;
     float peso , altura ;
-    char* posicao_jogador ;
+    string posicao_jogador ;
     float valor_passe , valor_compra , salario ;
     jogador_inativo status ; // se o jogador está ativo ou inativo
 } cad_jogadores_t ; 
@@ -53,18 +53,18 @@ typedef struct lista_jogadores {
 
 typedef struct time_escalado{
     uint8_t codigo;
-    char* nome_jogador;
-    char* posicao_jogador ;
+    string nome_jogador;
+    string posicao_jogador ;
 }   time_escalado;
 
 // define o tipo dados de cadastro dos jogos realizados
 typedef struct cad_jogosRealizados {
     uint8_t codigo;
-    char* timeAdversario;
+    string timeAdversario;
     data dt_jogo;
-    char* local_jogo;
-    char* resultado;
-    char* vencedor;
+    string local_jogo;
+    string resultado;
+    string vencedor;
     time_escalado time_escalado[11];
     int qtd_substituicoes;
 } cad_jogosRealizados_t ;
