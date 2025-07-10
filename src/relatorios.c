@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "../includes/types.h"
@@ -74,7 +75,7 @@ void confrontos(no_partidas *confrontos , string nome_timeadv){
 
 }
 //Relatório de jogadores vendidos
-void jogadores_vendidos(no_jogadores *ptr_lista_jog , float soma_vendaJogadores){
+float jogadores_vendidos(no_jogadores *ptr_lista_jog , float soma_vendaJogadores){
     soma_vendaJogadores = 0;
     limpar_tela();
     while(ptr_lista_jog){

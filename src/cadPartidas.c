@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "../includes/cadPartidas.h"
 #include "../includes/types.h"
+#include "../includes/tools.h"
 
 // confere se a lista de partidas está vazia
 bool is_list_partidas_vazia(no_partidas *ptr_lista_ptd){
@@ -36,6 +39,7 @@ no_partidas *nova_partida()
     novo->dados_partida.codigo = 0;
 
     // Nome do time adversário
+    getchar();
     printf("Nome do time adversário: ");
     fgets(novo->dados_partida.timeAdversario, T_STR, stdin);
     retirar_enter(novo->dados_partida.timeAdversario);
@@ -46,16 +50,19 @@ no_partidas *nova_partida()
 
     // Local onde ocorreu a partida
     printf("Local que ocorreu a partida: ");
+    getchar();
     fgets(novo->dados_partida.local_jogo, T_STR, stdin);
     retirar_enter(novo->dados_partida.local_jogo);
 
     // Resultado da partida
     printf("Resultado da partida: ");
+    getchar();
     fgets(novo->dados_partida.resultado, T_STR, stdin);
     retirar_enter(novo->dados_partida.resultado);
 
     // Vencedor da partida
     printf("Vencedor da partida: ");
+    getchar();
     fgets(novo->dados_partida.vencedor, T_STR, stdin);
     retirar_enter(novo->dados_partida.vencedor);
 
@@ -102,7 +109,7 @@ void insere_fim_partidas(no_partidas *nova_partida, lista_partidas *lista_ptd){
     if(is_list_partidas_vazia(lista_ptd->ptrlist_partida)){
         lista_ptd->ptrlist_partida = nova_partida; 
     } else {
-        no_partidas *ultimo = localizar_ultimo_jogador(lista_ptd->ptrlist_partida);
+        no_partidas *ultimo = localizar_ultimo_partidas(lista_ptd->ptrlist_partida);
         ultimo->prox_partida = nova_partida;
     }
 }

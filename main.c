@@ -14,12 +14,14 @@
 int main(){
 
     uint8_t opcao, sub_menu;
-    no_jogadores *aux_jog = NULL;
-    no_partidas *aux_ptd = NULL;
+    no_jogadores * jogador , *aux_jog = NULL;
+    no_partidas *partidas , *aux_ptd = NULL;
     float salario_min, salario_max;
     string nome_arq, nome_pessoa, funcao;
     char resposta;
     data data;
+    int inicio , fim ;
+    time_cadastrado time;
 
     lista_jogadores lista_jogadores;
     lista_partidas lista_partidas;
@@ -42,6 +44,7 @@ int main(){
                         switch (sub_menu)
                         {
                         case 1: // cadastro jogadores pelo início
+                            getchar();
                             aux_jog = novo_jogador();
                             insere_inicio_jogadores(aux_jog , &lista_jogadores);
                             break;
@@ -50,8 +53,8 @@ int main(){
                             break;
 
                         case 3:// cadastro partidas pelo início
-                        aux_ptd = nova_partida();
-                        insere_inicio_partidas(aux_ptd , &lista_partidas);
+                            aux_ptd = nova_partida();
+                            insere_inicio_partidas(aux_ptd , &lista_partidas);
                             break;
 
                         case 4:// cadastro partidas pelo fim
@@ -62,32 +65,34 @@ int main(){
                     break;
 
                 case 2:do  {
+                    string nome_timeadv;
+                    float soma_vendaJogadores;
                     sub_menu = menu_relatorios();
                         switch (sub_menu)
                         {
                         case 1: //Relatório completo de jogadores
-                            void listar_jogadores(no_jogadores *ptr_lista_jog);
+                            listar_jogadores(jogador);
                             break;
 
                         case 2://Relatório de jogadores por faixa de idade
-                            void faixa_idade(int inicio , int fim , no_jogadores *jogador);
+                            faixa_idade(inicio , fim , jogador);
                             break;
 
                         case 3://Relatório de resultado das partidas
-                            void result_partidas(no_partidas *resultado);
+                            result_partidas(partidas);
                             break;
 
                         case 5://Relatório de confrontos com time adversário
-                            void confrontos(no_partidas *confrontos);
+                            confrontos(partidas , nome_timeadv); 
                             break;
                         case 6://Relatório de jogadores vendidos
-                            void jogadores_vendidos(no_jogadores *ptr_lista_jog);
+                            jogadores_vendidos(jogador , soma_vendaJogadores);
                             break;
                         case 7://Relatório do valor do time em relação ao preço de venda dos jogadores
-                            void valor_doTime(no_jogadores *soma);
+                            valor_doTime(jogador);
                             break;
                         case 8://Relatório de aproveitamento do time (jogos vencidos pelo total de jogos realizados)
-                            void aproveitamento(no_partidas *jogos);
+                            aproveitamento(partidas , time);
                         
                             break;
                         }
@@ -96,66 +101,68 @@ int main(){
                     break;
                 
                 case 3:do  {
+                    string nome , pos_atua , adversario;
                     sub_menu = menu_pesquisas();
                         switch (sub_menu)
                         {
                         case 1://Localizar jogador por nome
-                            no_jogadores pesquisa_nome(string nome, no_jogadores *lista_jogadores);
+                            pesquisa_nome(nome, jogador);
                             break;
 
                         case 2://Localizar jogadores por posição em que atua
-                            no_jogadores posicao_atua(string pos_atua , no_jogadores *lista_jogadores );
+                            posicao_atua(pos_atua , jogador );
                             break;
 
                         case 3://Localizar jogos realizados pelo nome do time adversário
-                            no_partidas time_adversario(string adversario , no_partidas *lista_partidas);
+                            time_adversario(adversario , partidas);
                             break;
 
                         case 4://Localizar jogador com maior salário
-                            no_jogadores maior_salario(no_jogadores *lista_jogadores);
+                            maior_salario(jogador);
                             break;
 
                         case 5://Localizar jogadores por faixa salarial
-                            no_jogadores faixa_salarial(float maior , float menor , no_jogadores *lista_jogadores);
+                            faixa_salarial(salario_max , salario_min , jogador);
                             break;
                         }
                 } while (sub_menu != 0);
                     
                     break;
                 case 4:do  {
+                    string nome_arq;
                     sub_menu = arquivos();
                         switch (sub_menu)
                         {
                         case 1://salvar lista jogadores em arquivo binário
-                            void salvar_jogadores_arqbin(string nome_arq, no_jogadores *ptr_lista_jog);
+                            salvar_jogadores_arqbin(nome_arq,jogador);
                             break;
 
                         case 2://salvar lista partidas em arquivo binário
-                            void salvar_partidas_arqbin(string nome_arq, no_partidas *ptr_lista_ptd);
+                            salvar_partidas_arqbin(nome_arq, partidas);
                             break;
 
                         case 3://exportar lista jogadores para arquivo html
-                            void exportar_jogadores_html(string nome_arq, no_jogadores *lista_jog);
+                            exportar_jogadores_html(nome_arq,jogador);
                             break;
 
                         case 4://exportar lista partidas para arquivo html
-                            void exportar_partidas_html(string nome_arq, no_partidas *lista_ptd);
+                            exportar_partidas_html(nome_arq, partidas);
                             break;
 
                         case 5://exportar lista jogadores para arquivo texto
-                            void exportar_jogadores_arq_txt(string nome_arq, no_jogadores *lista_jog);
+                            exportar_jogadores_arq_txt(nome_arq,jogador);
                             break;
 
                         case 6://exportar lista partidas para arquivo texto
-                            void exportar_partidas_arq_txt(string nome_arq, no_partidas *lista_ptd);
+                            exportar_partidas_arq_txt(nome_arq, partidas);
                             break;
 
                         case 7://exportar lista jogadores para tabela
-                            void exportar_jogadores_arq_csv(string nome_arq, no_jogadores *lista_jog);
+                            exportar_jogadores_arq_csv(nome_arq,jogador);
                             break;
 
                         case 8://exportar lista partidas para tabela
-                            void exportar_partidas_arq_csv(string nome_arq, no_partidas *lista_ptd);
+                            exportar_partidas_arq_csv(nome_arq, partidas);
                             break;
                         }
                 } while (sub_menu != 0);

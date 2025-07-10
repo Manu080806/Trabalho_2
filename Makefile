@@ -19,6 +19,6 @@ obj:
 	$(CC) -c main.c -o $(OBJETOS)/main.o
 
 
-clear:
+cls:
 	rm $(TARGET)
 	rm $(OBJETOS)/*.o

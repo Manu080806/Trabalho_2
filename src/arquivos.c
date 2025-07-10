@@ -90,7 +90,7 @@ void ler_partidas_arqbin(string nome_arq, lista_partidas *lista_ptd){
         fread(aux, sizeof(no_partidas), 1, fp);
         if (!feof(fp)) { 
             aux->prox_partida = NULL;
-            insere_inicio_jogadores(aux, lista_ptd);
+            insere_inicio_partidas(aux, lista_ptd);
         }
         else {
             free(aux);

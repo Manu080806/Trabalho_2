@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
 
@@ -11,7 +12,7 @@ void retirar_enter(string str){
 }
 // função que limpa a tela
 void limpar_tela(){
-    system("clear");
+    system("cls");
 }
 //função que mostra os jogadores cadastrados
 void mostrar_dados_jogadores(no_jogadores *jogadores){
@@ -26,8 +27,8 @@ void mostrar_dados_jogadores(no_jogadores *jogadores){
     printf("Valor de compra do jogador: %.2f\n", jogadores->dados_jogador.valor_compra);
     printf("Salario: %.2f\n", jogadores->dados_jogador.salario);
     printf("Estado: %s\n", jogadores->dados_jogador.status.estado);
-    if (jogadores->dados_jogador.status.estado == "inativo") {
-        printf("Data da inativação: %d/%d/%d;", jogadores->dados_jogador.status.dt.dia, jogadores->dados_jogador.status.dt.mes, jogadores->dados_jogador.status.dt.ano);
+    if (strcmp( jogadores->dados_jogador.status.estado , "inativo") == 0) {
+        printf("Data da inativação: %d/%d/%d\n;", jogadores->dados_jogador.status.dt.dia, jogadores->dados_jogador.status.dt.mes, jogadores->dados_jogador.status.dt.ano);
         printf("Motivo da inativação: %s\n", jogadores->dados_jogador.status.motivo);
     }
     
@@ -41,7 +42,7 @@ void mostrar_dados_partidas(no_partidas *partida){
     printf("Local onde foi realizado o jogo: %s\n", partida->dados_partida.local_jogo);
     printf("Resultado do jogo: %s\n", partida->dados_partida.resultado);
     printf("Nome do time vencedor: %s\n", partida->dados_partida.vencedor);
-    printf("Time escalado: %d\n", partida->dados_partida.); 
+    //printf("Time escalado: %d\n", partida->dados_partida.); 
     printf("Quantidade de substituições: %d\n", partida->dados_partida.qtd_substituicoes);
     
 }

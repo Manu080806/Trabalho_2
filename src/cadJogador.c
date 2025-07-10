@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "../includes/cadJogador.h"
 #include "../includes/types.h"
+#include "../includes/tools.h"
 
 //confere se a lista jogadores está vazia
 bool is_list_jogadores_vazia(no_jogadores *ptr_lista_jog){
@@ -25,62 +28,91 @@ no_jogadores *localizar_ultimo_jogador(no_jogadores *ptr_lista_jog){
 no_jogadores *novo_jogador()
 {
     no_jogadores *novo;
+    char aux[T_STR]; 
 
     // Aloca um novo registro na heap
     novo = (no_jogadores*)malloc(sizeof(no_jogadores));
-
     if (!novo) return NULL;
+
+    novo->dados_jogador.nome_jogador = NULL;
+    novo->dados_jogador.posicao_jogador = NULL;
+    novo->dados_jogador.status.estado = NULL;
+    novo->dados_jogador.status.motivo = NULL;
+
 
     // Código (provisório)
     novo->dados_jogador.codigo = 0;
 
     // Nome
     printf("Nome do jogador: ");
-    fgets(novo->dados_jogador.nome_jogador, T_STR, stdin);
-    retirar_enter(novo->dados_jogador.nome_jogador);
+    fgets(aux, T_STR, stdin);
+    retirar_enter(aux);
+    novo->dados_jogador.nome_jogador = (char*)malloc(strlen(aux) + 1);
+    strcpy(novo->dados_jogador.nome_jogador, aux);
 
     // Idade
     printf("Idade do jogador: ");
     scanf("%d", &novo->dados_jogador.idade_jogador);
+    getchar();
 
     // Peso
     printf("Peso do jogador: ");
-    scanf("%f",novo->dados_jogador.peso);    
+    scanf("%f",&novo->dados_jogador.peso);
+    getchar();    
 
     // Altura
     printf("Altura do jogador: ");
-    scanf("%f", &novo->dados_jogador.altura); 
+    scanf("%f", &novo->dados_jogador.altura);
+    getchar(); 
 
     // Posição que o jogador atua
     printf("Posição que o jogador atua: ");
-    fgets(novo->dados_jogador.posicao_jogador, T_STR, stdin);
-    retirar_enter(novo->dados_jogador.posicao_jogador);
+    fgets(aux, T_STR, stdin);
+    retirar_enter(aux);
+    novo->dados_jogador.posicao_jogador = (char*)malloc(strlen(aux) + 1);
+    strcpy(novo->dados_jogador.posicao_jogador, aux);
 
     // Valor de compra
     printf("Valor de compra do jogador: ");
-    scanf("%2.f", &novo->dados_jogador.valor_compra);
+    scanf("%f", &novo->dados_jogador.valor_compra);
+    getchar();
     
     // Valor de passe do jogador
     printf("Valor de passe do jogador: ");
-    scanf("%2.f", &novo->dados_jogador.valor_passe);
+    scanf("%f", &novo->dados_jogador.valor_passe);
+    getchar();
 
     // Salario
     printf("Salario: ");
-    scanf("%2.f", &novo->dados_jogador.salario);
+    scanf("%f", &novo->dados_jogador.salario);
+    getchar();
 
     //Se o jogador está ativo ou inativo
     printf("Estado do jogador: ");
-    fgets(novo->dados_jogador.status.estado, T_STR, stdin);
-    retirar_enter(novo->dados_jogador.status.estado);
-        if (strcmmp( novo->dados_jogador.status.estado , inativo) == 0) {
+    fgets(aux, T_STR, stdin);
+    retirar_enter(aux);
+    novo->dados_jogador.status.estado = (char*)malloc(strlen(aux) + 1);
+    strcpy(novo->dados_jogador.status.estado, aux);
+        if (strcmp( novo->dados_jogador.status.estado , "inativo") == 0) {
             //data da inativação
-            printf("Data da inativação: %d/%d/%d;", novo->dados_jogador.status.dt.dia, novo->dados_jogador.status.dt.mes, novo->dados_jogador.status.dt.ano);
-            scanf("%d/%d/%d", &novo->dados_jogador.status.dt.dia, &novo->dados_jogador.status.dt.mes, &novo->dados_jogador.status.dt.ano);
-
+            printf("Data da inativação:");
+            printf("Dia:");
+            scanf("%d", &novo->dados_jogador.status.dt.dia);
+            getchar();
+            printf("Mês:");
+            scanf("%d", &novo->dados_jogador.status.dt.mes);
+            getchar();
+            printf("Ano:");
+            scanf("%d", &novo->dados_jogador.status.dt.ano);
+            getchar();
+           
             //motivo da inativação
-            printf("Motivo da inativação: %s\n", novo->dados_jogador.status.motivo);
-            fgets(novo->dados_jogador.status.motivo, T_STR, stdin);
-            retirar_enter(novo->dados_jogador.status.motivo);
+            getchar();
+            printf("Motivo da inativação: ");
+            fgets(aux, T_STR, stdin);
+            retirar_enter(aux);
+            novo->dados_jogador.status.motivo = (char*)malloc(strlen(aux) + 1);
+            strcpy(novo->dados_jogador.status.motivo, aux);
     }
 
     // Inicializar o ponteiro proximo

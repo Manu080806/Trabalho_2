@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "../includes/types.h"
@@ -15,7 +16,7 @@ no_jogadores pesquisa_nome(string nome, no_jogadores *lista_jogadores){
         lista_jogadores = lista_jogadores->prox_jogador;
     }
 
-    return ;
+    return *lista_jogadores;
 }
 //Localizar jogadores por posição em que atua
 no_jogadores posicao_atua(string pos_atua , no_jogadores *lista_jogadores ){
@@ -23,7 +24,25 @@ no_jogadores posicao_atua(string pos_atua , no_jogadores *lista_jogadores ){
 }
 //Localizar jogos realizados pelo nome do time adversário
 no_partidas time_adversario(string adversario , no_partidas *lista_partidas){
+    int i = 0;
 
+    limpar_tela();
+
+    printf("Todos os jogos contra o time: %s\n\n", adversario);
+
+    //percorrer a lista
+    while(lista_partidas)
+    {   //verifica todos os jogos com aquele time adversário
+        if (strcmp( lista_partidas->dados_partida.timeAdversario , adversario) == 0)
+        {
+            mostrar_dados_partidas(lista_partidas);
+            printf("\n");
+            i++;
+        }
+        lista_partidas = lista_partidas->prox_partida;
+    }
+
+    if (i<1) printf("Nenhum jogo contra o time %s foi encontrado\n", adversario); 
 }
 //Localizar jogador com maior salário
 no_jogadores maior_salario(no_jogadores *lista_jogadores){

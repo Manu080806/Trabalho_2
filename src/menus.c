@@ -11,13 +11,12 @@ uint8_t menu_principal(){
 
         printf("---Menu Principal---\n");
         printf("\n");
-        printf("1. Cadastros de jogadores\n");
-        printf("2. Cadastros de partidas\n");
-        printf("3. Menu de relatorios\n");
-        printf("4. Menu de pesquisas\n");
-        printf("5. Tipos de exportação de arquivos\n");
+        printf("1. Cadastros\n");
+        printf("2. Menu de relatorios\n");
+        printf("3. Menu de pesquisas\n");
+        printf("4. Tipos de exportação de arquivos\n");
         printf("0. Sair do programa\n");
-        printf("::: ");
+        printf("Qual a sua opção? ");
         scanf("%hhi", &opcao);
 
         return opcao;
