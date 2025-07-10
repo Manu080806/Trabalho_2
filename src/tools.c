@@ -55,4 +55,3 @@ int qtd_partidas(no_partidas *partidas){
     }
     return i;
 }
-

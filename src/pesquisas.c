@@ -80,3 +80,4 @@ no_jogadores faixa_salarial(float maior , float menor , no_jogadores *lista_joga
 
     if (i<1) printf("Nenhum jogador encontrado dentro desta faixa salarial\n"); 
 }
+ 

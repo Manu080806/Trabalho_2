@@ -44,6 +44,7 @@ no_jogadores *novo_jogador()
     novo->dados_jogador.codigo = 0;
 
     // Nome
+    getchar();
     printf("Nome do jogador: ");
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
@@ -85,7 +86,7 @@ no_jogadores *novo_jogador()
     // Salario
     printf("Salario: ");
     scanf("%f", &novo->dados_jogador.salario);
-    
+    getchar();
 
     //Se o jogador está ativo ou inativo
     printf("Estado do jogador: ");
@@ -155,3 +156,4 @@ void insere_fim_jogadores(no_jogadores *novo_jogador, lista_jogadores *lista_jog
         ultimo->prox_jogador = novo_jogador;
     }
 }
+ 

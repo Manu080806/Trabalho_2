@@ -7,8 +7,6 @@
 
 //Relatório completo de jogadores
 void listar_jogadores(no_jogadores *ptr_lista_jog){
-    
-    limpar_tela();
 
     //laço responsável por percorrer a lista encadeada
     while (ptr_lista_jog) {
@@ -21,8 +19,6 @@ void listar_jogadores(no_jogadores *ptr_lista_jog){
 void faixa_idade(int inicio , int fim , no_jogadores *jogador){
     no_jogadores *ptr_atual = jogador;
     int i = 0;
-
-    limpar_tela();
 
     printf("Jogadores com idade entre %d e %.d: \n\n", inicio, fim);
 
@@ -42,7 +38,6 @@ void faixa_idade(int inicio , int fim , no_jogadores *jogador){
 }
 //Relatório de resultado das partidas
 void result_partidas(no_partidas *resultado){
-    limpar_tela(); 
 
     //laço responsável por percorrer a lista encadeada
     while (resultado) {
@@ -55,8 +50,6 @@ void result_partidas(no_partidas *resultado){
 void confrontos(no_partidas *confrontos , string nome_timeadv){
     no_partidas *ptr_atual = confrontos ;
     int i = 0;
-
-    limpar_tela();
 
     printf("Todos os jogos contra o time: %s\n\n", nome_timeadv);
 
@@ -76,9 +69,9 @@ void confrontos(no_partidas *confrontos , string nome_timeadv){
 
 }
 //Relatório de jogadores vendidos
-float jogadores_vendidos(no_jogadores *ptr_lista_jog , float soma_vendaJogadores){
+void jogadores_vendidos(no_jogadores *ptr_lista_jog , float soma_vendaJogadores){
     soma_vendaJogadores = 0;
-    limpar_tela();
+
     while(ptr_lista_jog){
         if (strcmp(ptr_lista_jog->dados_jogador.status.estado , "inativo") == 0) {
                 if (strcmp(ptr_lista_jog->dados_jogador.status.motivo , "vendido") == 0) {
@@ -89,13 +82,13 @@ float jogadores_vendidos(no_jogadores *ptr_lista_jog , float soma_vendaJogadores
             }
         ptr_lista_jog = ptr_lista_jog->prox_jogador;
     }
-    return soma_vendaJogadores;
-        //printf("Valor total dos jogadores vendidos: %.2f\n", soma_vendaJogadores);
+        printf("\n");
+        printf("Valor total dos jogadores vendidos: %.2f\n", soma_vendaJogadores);
 }
 //Relatório do valor do time em relação ao preço de venda dos jogadores
 void valor_doTime(no_jogadores *ptr_lista_jog){
     float soma = 0 , soma_vendidos = 0;
-    limpar_tela();
+    
     while (ptr_lista_jog){
         soma += ptr_lista_jog->dados_jogador.valor_passe;
     }
@@ -123,3 +116,4 @@ void aproveitamento(no_partidas *ptr_lista_ptd , time_cadastrado time){
                         printf("%.2f\n", aproveitamento);
                         printf("\n"); 
 }
+ 

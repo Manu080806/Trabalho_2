@@ -34,9 +34,13 @@ int main(){
     ler_jogadores_arqbin("dados_jogadores.bin", &lista_jogadores);
     ler_partidas_arqbin("dados_partidas.bin", &lista_partidas);
 
-    //ordenar_em_ordem_alfabetica
+    //ordenar_em_ordem_alfabetica 
 
     do{   
+        printf("Qual time o sistema ira gerir? ");
+        fgets(time.nome, T_STR, stdin);
+        retirar_enter(time.nome);
+
         opcao = menu_principal();
             switch (opcao)  {
                 case 1: do  {
@@ -44,17 +48,13 @@ int main(){
                         switch (sub_menu)
                         {
                         case 1: // cadastro jogadores pelo início
-                            getchar();
                             aux_jog = novo_jogador();
-                           if (aux_jog != NULL) {
-                                insere_inicio_jogadores(aux_jog , &lista_jogadores);
-                                printf("Jogador cadastrado com sucesso!\n");
-                            } else {
-                                printf("Falha ao cadastrar o jogador.\n");
-                            }
+                            insere_inicio_jogadores(aux_jog , &lista_jogadores);
                             break;
 
                         case 2: // cadastro jogadores pelo fim
+                            aux_jog = novo_jogador();
+                            insere_fim_jogadores(aux_jog  , &lista_jogadores);
                             break;
 
                         case 3:// cadastro partidas pelo início
@@ -63,12 +63,14 @@ int main(){
                             break;
 
                         case 4:// cadastro partidas pelo fim
+                            aux_ptd = nova_partida();
+                            insere_fim_partidas(aux_ptd , &lista_partidas);
                             break;
                         }
                     } while (sub_menu != 0);
                     break;
 
-                case 2:do  {
+                case 2: do  {
                     string nome_timeadv;
                     float soma_vendaJogadores;
                     sub_menu = menu_relatorios();
@@ -79,6 +81,10 @@ int main(){
                             break;
 
                         case 2://Relatório de jogadores por faixa de idade
+                            printf("Qual a idade inicial da faixa desejada? ");
+                            scanf("%d", &inicio);
+                            printf("Qual a idade final da faixa desejada? ");
+                            scanf("%d", &fim);
                             faixa_idade(inicio , fim , lista_jogadores.ptrlist_jogadores);
                             break;
 
@@ -87,17 +93,21 @@ int main(){
                             break;
 
                         case 5://Relatório de confrontos com time adversário
+                            printf("Contra qual time sao as partidas que desejas? ");
+                            fgets(nome_timeadv, T_STR, stdin);
                             confrontos(lista_partidas.ptrlist_partida , nome_timeadv); 
                             break;
+
                         case 6://Relatório de jogadores vendidos
                             jogadores_vendidos(lista_jogadores.ptrlist_jogadores , soma_vendaJogadores);
                             break;
+
                         case 7://Relatório do valor do time em relação ao preço de venda dos jogadores
                             valor_doTime(lista_jogadores.ptrlist_jogadores);
                             break;
+
                         case 8://Relatório de aproveitamento do time (jogos vencidos pelo total de jogos realizados)
                             aproveitamento(lista_partidas.ptrlist_partida , time);
-                        
                             break;
                         }
                     } while (sub_menu != 0);

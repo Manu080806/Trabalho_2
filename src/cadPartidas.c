@@ -29,11 +29,16 @@ no_partidas *localizar_ultimo_partidas(no_partidas *ptr_lista_ptd){
 no_partidas *nova_partida()
 {
     no_partidas *novo;
+    char aux[T_STR];
 
     // Aloca um novo registro na heap
     novo = (no_partidas*)malloc(sizeof(no_partidas));
-
     if (!novo) return NULL;
+
+    novo->dados_partida.timeAdversario = NULL;
+    novo->dados_partida.local_jogo = NULL;
+    novo->dados_partida.resultado = NULL;
+    novo->dados_partida.vencedor = NULL;
 
     // Código (provisório)
     novo->dados_partida.codigo = 0;
@@ -41,8 +46,10 @@ no_partidas *nova_partida()
     // Nome do time adversário
     getchar();
     printf("Nome do time adversario: ");
-    fgets(novo->dados_partida.timeAdversario, T_STR, stdin);
-    retirar_enter(novo->dados_partida.timeAdversario);
+    fgets(aux, T_STR, stdin);
+    retirar_enter(aux);
+    novo->dados_partida.timeAdversario = (char*)malloc(strlen(aux) + 1);
+    strcpy(novo->dados_partida.timeAdversario , aux);
 
     // Data da partida
     printf("Data da partida: \n");
@@ -59,26 +66,33 @@ no_partidas *nova_partida()
     // Local onde ocorreu a partida
     printf("Local que ocorreu a partida: ");
     getchar();
-    fgets(novo->dados_partida.local_jogo, T_STR, stdin);
-    retirar_enter(novo->dados_partida.local_jogo);
+    fgets(aux, T_STR, stdin);
+    retirar_enter(aux);
+    novo->dados_partida.local_jogo = (char*)malloc(strlen(aux) + 1);
+    strcpy(novo->dados_partida.local_jogo , aux);
 
     // Resultado da partida
     printf("Resultado da partida: ");
     getchar();
-    fgets(novo->dados_partida.resultado, T_STR, stdin);
-    retirar_enter(novo->dados_partida.resultado);
+    fgets(aux, T_STR, stdin);
+    retirar_enter(aux);
+    novo->dados_partida.resultado = (char*)malloc(strlen(aux) + 1);
+    strcpy(novo->dados_partida.resultado , aux);
 
     // Vencedor da partida
     printf("Vencedor da partida: ");
     getchar();
-    fgets(novo->dados_partida.vencedor, T_STR, stdin);
-    retirar_enter(novo->dados_partida.vencedor);
+    fgets(aux, T_STR, stdin);
+    retirar_enter(aux);
+    novo->dados_partida.vencedor = (char*)malloc(strlen(aux) + 1);
+    strcpy(novo->dados_partida.vencedor , aux);
 
     // Time escalado
 
     // Quantidade de substituições
     printf("Quantidade de substituicoes: ");
-    scanf("%d",novo->dados_partida.qtd_substituicoes);
+    scanf("%d",&novo->dados_partida.qtd_substituicoes);
+    getchar();
 
     // Inicializar o ponteiro proximo
     novo->prox_partida = NULL;
@@ -92,7 +106,6 @@ void insere_inicio_partidas(no_partidas *nova_partida, lista_partidas *lista_ptd
         printf("Partida ou lista inválidos\n");
         return; 
     }
-
     // Define o codigo
     nova_partida->dados_partida.codigo = ++lista_ptd->nr_nos_partida;
 
@@ -122,3 +135,4 @@ void insere_fim_partidas(no_partidas *nova_partida, lista_partidas *lista_ptd){
         ultimo->prox_partida = nova_partida;
     }
 }
+ 

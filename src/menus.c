@@ -25,8 +25,6 @@ uint8_t menu_principal(){
 uint8_t menu_cadastros(){
     uint8_t opc;
 
-        limpar_tela();
-
         printf("   Menu de casdastros \n");
         printf("\n");
         printf("1.cadastro jogadores pelo inicio\n");
@@ -36,6 +34,8 @@ uint8_t menu_cadastros(){
         printf("0.Voltar ao menu principal\n");
         printf("Qual a sua opcao? ");
         scanf("%hhi", &opc);
+
+        limpar_tela();
 
         return opc;
 }

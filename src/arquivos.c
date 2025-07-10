@@ -280,3 +280,4 @@ void exportar_partidas_arq_csv(string nome_arq, no_partidas *lista_ptd){
     //fecha o arquivo
     fclose(fp); 
 }
+ 
