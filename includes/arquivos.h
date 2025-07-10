@@ -13,11 +13,6 @@ void ler_jogadores_arqbin(lista_jogadores *lista_jog);
 //ler arquivo binário partidas
 void ler_partidas_arqbin(lista_partidas *lista_ptd);
 
-//exportar lista jogadores para arquivo html
-void exportar_jogadores_html(string nome_arq, no_jogadores *lista_jog);
-//exportar lista partidas para arquivo html
-void exportar_partidas_html(string nome_arq, no_partidas *lista_ptd);
-
 //exportar lista jogadores para arquivo texto
 void exportar_jogadores_arq_txt(string nome_arq, no_jogadores *lista_jog);
 //exportar lista partidas para arquivo texto
@@ -27,6 +22,11 @@ void exportar_partidas_arq_txt(string nome_arq, no_partidas *lista_ptd);
 void exportar_jogadores_arq_csv(string nome_arq, no_jogadores *lista_jog);
 //exportar lista partidas para tabela
 void exportar_partidas_arq_csv(string nome_arq, no_partidas *lista_ptd);
+
+//exportar lista jogadores para arquivo html
+void exportar_jogadores_html(string nome_arq, no_jogadores *lista_jog);
+//exportar lista partidas para arquivo html
+void exportar_partidas_html(string nome_arq, no_partidas *lista_ptd);
 
 
 #endif

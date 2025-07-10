@@ -101,53 +101,6 @@ void ler_partidas_arqbin(lista_partidas *lista_ptd){
     fclose(fp);
 }
 
-//exportar lista jogadores para arquivo html
-void exportar_jogadores_html(string nome_arq, no_jogadores *lista_jog){
-    //abre o arquivo 
-    FILE *fp = fopen(nome_arq , "w");
-
-    // Verifica se o arquivo foi aberto
-    if(!fp){
-        printf("Erro ao tentar abrir o arquivo");
-        return;
-    }
-
-    //salva os arquivos em HTML
-    fprintf(fp , "<html> <body> <table> <tr> <td><h1> Código </h1></td> <td><h1> Nome do jogador </h1></td> <td><h1> Idade do jogador </h1></td> <td><h1> Peso do jogador </h1></td> <td><h1> Altura do jogador </h1></td> <td><h1> Posição em que atua </h1></td> <td><h1> Valor de compra do jogador </h1></td> <td><h1> Valor de passe do jogador </h1></td> <td><h1> Salário do jogador </h1></td> <td><h1> Status do Jogador </h1></td> <td><h1> Data da Inativação </h1></td> <td><h1> Motivo da inativação </h1></td> </tr>\n");
-    while(lista_jog){
-        fprintf(fp , "<tr> <td>%hhi</td> <td>%s</td> <td>%d</td> <td>%f</td> <td>%f</td> <td>%s</td> <td>%.2f</td> <td>%.2f</td> <td>%.2f</td> <td>%s</td> <td>%d/%d/%d</td> <td>$s</td> </tr>\n", lista_jog->dados_jogador.codigo , lista_jog->dados_jogador.idade_jogador , lista_jog->dados_jogador.peso , lista_jog->dados_jogador.altura , lista_jog->dados_jogador.posicao_jogador , lista_jog->dados_jogador.valor_compra , lista_jog->dados_jogador.valor_passe , lista_jog->dados_jogador.salario , lista_jog->dados_jogador.status.estado , lista_jog->dados_jogador.status.dt , lista_jog->dados_jogador.status.motivo);
-        lista_jog = lista_jog->prox_jogador;
-    }
-    fprintf(fp , "</table> </body> </html>");
-
-    //fecha o arquivo
-    fclose(fp);
-}
-//exportar lista partidas para arquivo html
-void exportar_partidas_html(string nome_arq, no_partidas *lista_ptd){
-    //abre o arquivo 
-    FILE *fp = fopen(nome_arq , "w");
-
-    // Verifica se o arquivo foi aberto
-    if(!fp){
-        printf("Erro ao tentar abrir o arquivo");
-        return;
-    }
-
-    //salva os arquivos em HTML
-    fprintf(fp , "<html> <body> <table> <tr> <td><h1> Código </h1></td> <td><h1> Nome do time adversário </h1></td> <td><h1> Data do jogo </h1></td> <td><h1> Local do jogo </h1></td> <td><h1> Resultado do jogo </h1></td> <td><h1> Vencedor da partida </h1></td> <td><h1> Time escalado </h1></td> <td><h1> Quantidade de substituições que ocorreram </h1></td> </tr>\n");
-    while(lista_ptd){
-        fprintf(fp , "<tr> <td>%d</td> <td>%s</td> <td>%d/%d/%d</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%d</td> </tr>\n", lista_ptd->dados_partida.codigo , lista_ptd->dados_partida.timeAdversario , lista_ptd->dados_partida.dt_jogo , lista_ptd->dados_partida.local_jogo , lista_ptd->dados_partida.resultado , lista_ptd->dados_partida.vencedor , lista_ptd->dados_partida , lista_ptd->dados_partida.qtd_substituicoes);
-        lista_ptd = lista_ptd->prox_partida;
-
-    }
-    fprintf(fp , "</table> </body> </html>");
-
-    //fecha o arquivo
-    fclose(fp);
-
-}
-
 //exportar lista jogadores para arquivo texto
 void exportar_jogadores_arq_txt(string nome_arq, no_jogadores *lista_jog){
     //abri o arquivo
@@ -281,3 +234,49 @@ void exportar_partidas_arq_csv(string nome_arq, no_partidas *lista_ptd){
     fclose(fp); 
 }
  
+//exportar lista jogadores para arquivo html
+void exportar_jogadores_html(string nome_arq, no_jogadores *lista_jog){
+    //abre o arquivo 
+    FILE *fp = fopen(nome_arq , "w");
+
+    // Verifica se o arquivo foi aberto
+    if(!fp){
+        printf("Erro ao tentar abrir o arquivo");
+        return;
+    }
+
+    //salva os arquivos em HTML
+    fprintf(fp , "<html> <body> <table> <tr> <td><h1> Código </h1></td> <td><h1> Nome do jogador </h1></td> <td><h1> Idade do jogador </h1></td> <td><h1> Peso do jogador </h1></td> <td><h1> Altura do jogador </h1></td> <td><h1> Posição em que atua </h1></td> <td><h1> Valor de compra do jogador </h1></td> <td><h1> Valor de passe do jogador </h1></td> <td><h1> Salário do jogador </h1></td> <td><h1> Status do Jogador </h1></td> <td><h1> Data da Inativação </h1></td> <td><h1> Motivo da inativação </h1></td> </tr>\n");
+    while(lista_jog){
+        fprintf(fp , "<tr> <td>%hhi</td> <td>%s</td> <td>%d</td> <td>%f</td> <td>%f</td> <td>%s</td> <td>%.2f</td> <td>%.2f</td> <td>%.2f</td> <td>%s</td> <td>%d/%d/%d</td> <td>$s</td> </tr>\n", lista_jog->dados_jogador.codigo , lista_jog->dados_jogador.idade_jogador , lista_jog->dados_jogador.peso , lista_jog->dados_jogador.altura , lista_jog->dados_jogador.posicao_jogador , lista_jog->dados_jogador.valor_compra , lista_jog->dados_jogador.valor_passe , lista_jog->dados_jogador.salario , lista_jog->dados_jogador.status.estado , lista_jog->dados_jogador.status.dt , lista_jog->dados_jogador.status.motivo);
+        lista_jog = lista_jog->prox_jogador;
+    }
+    fprintf(fp , "</table> </body> </html>");
+
+    //fecha o arquivo
+    fclose(fp);
+}
+//exportar lista partidas para arquivo html
+void exportar_partidas_html(string nome_arq, no_partidas *lista_ptd){
+    //abre o arquivo 
+    FILE *fp = fopen(nome_arq , "w");
+
+    // Verifica se o arquivo foi aberto
+    if(!fp){
+        printf("Erro ao tentar abrir o arquivo");
+        return;
+    }
+
+    //salva os arquivos em HTML
+    fprintf(fp , "<html> <body> <table> <tr> <td><h1> Código </h1></td> <td><h1> Nome do time adversário </h1></td> <td><h1> Data do jogo </h1></td> <td><h1> Local do jogo </h1></td> <td><h1> Resultado do jogo </h1></td> <td><h1> Vencedor da partida </h1></td> <td><h1> Time escalado </h1></td> <td><h1> Quantidade de substituições que ocorreram </h1></td> </tr>\n");
+    while(lista_ptd){
+        fprintf(fp , "<tr> <td>%d</td> <td>%s</td> <td>%d/%d/%d</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%d</td> </tr>\n", lista_ptd->dados_partida.codigo , lista_ptd->dados_partida.timeAdversario , lista_ptd->dados_partida.dt_jogo , lista_ptd->dados_partida.local_jogo , lista_ptd->dados_partida.resultado , lista_ptd->dados_partida.vencedor , lista_ptd->dados_partida , lista_ptd->dados_partida.qtd_substituicoes);
+        lista_ptd = lista_ptd->prox_partida;
+
+    }
+    fprintf(fp , "</table> </body> </html>");
+
+    //fecha o arquivo
+    fclose(fp);
+
+}
