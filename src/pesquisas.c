@@ -19,8 +19,14 @@ no_jogadores pesquisa_nome(string nome, no_jogadores *lista_jogadores){
     return *lista_jogadores;
 }
 //Localizar jogadores por posição em que atua
-no_jogadores posicao_atua(string pos_atua , no_jogadores *lista_jogadores ){
-
+no_jogadores *posicao_atua(string pos_atua , no_jogadores *lista_jogadores ){
+    if (lista_jogadores == NULL){
+        return NULL;
+    }
+    if (strcmp(pos_atua, lista_jogadores->dados_jogador.posicao_jogador) == 0){
+        return lista_jogadores;
+    }
+    return posicao_atua(pos_atua, lista_jogadores->prox_jogador);
 }
 //Localizar jogos realizados pelo nome do time adversário
 no_partidas time_adversario(string adversario , no_partidas *lista_partidas){

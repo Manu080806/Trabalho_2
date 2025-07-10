@@ -50,12 +50,12 @@ void result_partidas(no_partidas *resultado){
 void confrontos(no_partidas *ptr_atual , string nome_timeadv){
     int i = 0;
 
-    printf("Todos os jogos contra o time: %s\n\n", nome_timeadv);
+    printf("Todos os jogos contra o time: %s\n", nome_timeadv);
 
     //percorrer a lista
     while(ptr_atual)
     {   //verifica todos os jogos com aquele time adversário
-        if (strcmp( ptr_atual->dados_partida.timeAdversario , nome_timeadv) == 0)
+        if (strcmp(ptr_atual->dados_partida.timeAdversario , nome_timeadv) == 0)
         {
             mostrar_dados_partidas(ptr_atual);
             printf("\n");

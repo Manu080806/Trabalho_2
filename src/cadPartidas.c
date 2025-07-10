@@ -50,31 +50,26 @@ no_partidas *nova_partida()
     printf("Data da partida: \n");
         printf("Dia:");
         scanf("%d", &novo->dados_partida.dt_jogo.dia);
-        getchar();
         printf("Mes:");
         scanf("%d", &novo->dados_partida.dt_jogo.mes);
-        getchar();
         printf("Ano:");
         scanf("%d", &novo->dados_partida.dt_jogo.ano);
         getchar();
 
     // Local onde ocorreu a partida
     printf("Local que ocorreu a partida: ");
-    getchar();
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
     strcpy(novo->dados_partida.local_jogo , aux);
 
     // Resultado da partida
     printf("Resultado da partida: ");
-    getchar();
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
     strcpy(novo->dados_partida.resultado , aux);
 
     // Vencedor da partida
     printf("Vencedor da partida: ");
-    getchar();
     fgets(aux, T_STR, stdin);
     retirar_enter(aux);
     strcpy(novo->dados_partida.vencedor , aux);
@@ -90,7 +85,6 @@ no_partidas *nova_partida()
     // Quantidade de substituições
     printf("Quantidade de substituicoes: ");
     scanf("%d",&novo->dados_partida.qtd_substituicoes);
-    getchar();
 
     // Inicializar o ponteiro proximo
     novo->prox_partida = NULL;

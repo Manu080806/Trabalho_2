@@ -72,5 +72,6 @@ void escalamento(no_jogadores *jogadores , string nome , time_escalado *escalado
             strcpy(escalado->nome_jogador , jogadores->dados_jogador.nome_jogador); 
             strcpy(escalado->posicao_jogador , jogadores->dados_jogador.posicao_jogador); 
         }
+        jogadores = jogadores->prox_jogador;
     }
 }

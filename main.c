@@ -129,6 +129,21 @@ int main(){
                             break;
 
                         case 2://Localizar jogadores por posição em que atua
+                        getchar();
+                        printf("Qual a posicao que desejas pesquisar? ");
+                        fgets(pos_atua, T_STR, stdin);
+                        retirar_enter(pos_atua);
+
+                        *aux_jog = posicao_atua(pos_atua, lista_jogadores.ptrlist_jogadores);
+
+                        if (aux_jog != NULL) {
+                            printf("Codigo: %hhi\n" , aux_jog->dados_jogador.codigo);
+                            printf("Nome: %s\n", aux_jog->dados_jogador.nome_jogador);
+                            printf("Posicao que atua: %s\n" , aux_jog->dados_jogador.posicao_jogador);
+                        } else {
+                            printf("Nenhum jogador encontrado na posicao '%s'.\n", pos_atua);
+                        }
+                        break;
                             posicao_atua(pos_atua , lista_jogadores.ptrlist_jogadores );
                             break;
 
@@ -136,7 +151,7 @@ int main(){
                             getchar();
                             printf("Qual o time adversário? ");
                             fgets(adversario, T_STR, stdin);
-                            getchar();
+                            retirar_enter(adversario);
                             time_adversario(adversario , lista_partidas.ptrlist_partida);
                             break;
 
