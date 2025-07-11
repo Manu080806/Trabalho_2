@@ -12,7 +12,7 @@ void retirar_enter(string str){
 }
 // função que limpa a tela
 void limpar_tela(){
-    system("cls"); // mudar cls para clear ao usar no linux
+    system("clear"); // mudar cls para clear ao usar no linux
 }
 //função que mostra os jogadores cadastrados
 void mostrar_dados_jogadores(no_jogadores *jogadores){

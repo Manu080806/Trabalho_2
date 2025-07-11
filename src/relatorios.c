@@ -90,6 +90,7 @@ void valor_doTime(no_jogadores *ptr_lista_jog){
     
     while (ptr_lista_jog){
         soma += ptr_lista_jog->dados_jogador.valor_passe;
+        ptr_lista_jog = ptr_lista_jog->prox_jogador;
     }
     jogadores_vendidos(ptr_lista_jog , soma_vendidos); 
     soma_vendidos = soma - soma_vendidos;

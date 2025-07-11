@@ -1,0 +1,165 @@
+Codigo: 15
+Nome do Jogador: bozo
+Idade: 20
+Peso: 80.000000
+Altura: 180.000000
+Posi√ß√£o que atua: atacante
+Valor de compra: 1300.00
+Valor de passe:5000.00
+Sal√°rio: 4000.00
+Status do jogador: 1425817316
+
+Codigo: 14
+Nome do Jogador: madalberto
+Idade: 40
+Peso: 89.000000
+Altura: 1.940000
+Posi√ß√£o que atua: defesa
+Valor de compra: 8.00
+Valor de passe:9.00
+Sal√°rio: 10.00
+Status do jogador: 1425816852
+
+Codigo: 13
+Nome do Jogador: lberto
+Idade: 1117782016
+Peso: 2.090000
+Altura: 69783343780100246077440.000000
+Posi√ß√£o que atua: iro
+Valor de compra: 8.00
+Valor de passe:10.00
+Sal√°rio: 71442027416003533808681835560960.00
+Status do jogador: 1425816388
+
+Codigo: 12
+Nome do Jogador: to
+Idade: 1072902963
+Peso: 293309969211163607048548327096320.000000
+Altura: 75022786546839812528907747328.000000
+Posi√ß√£o que atua: 
+Valor de compra: 1183755481137111635603056737910784.00
+Valor de passe:10.00
+Sal√°rio: 0.00
+Status do jogador: 1425815924
+
+Codigo: 11
+Nome do Jogador: stem32\cmd.exe
+Idade: 1701605223
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: º
+Valor de compra: 0.00
+Valor de passe:1183755481137111635603056737910784.00
+Sal√°rio: 0.00
+Status do jogador: 1425815460
+
+Codigo: 10
+Nome do Jogador: 32\cmd.exe
+Idade: 1702129249
+Peso: 0.000000
+Altura: -0.005698
+Posi√ß√£o que atua: ºΩæø‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ◊¯˘˙˚¸˝˛ﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425814996
+
+Codigo: 9
+Nome do Jogador: md.exe
+Idade: 12129248
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: 
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425814532
+
+Codigo: 8
+Nome do Jogador: xe
+Idade: 0
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: 
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425814068
+
+Codigo: 7
+Nome do Jogador: 
+Idade: 0
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: 
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425813604
+
+Codigo: 6
+Nome do Jogador: 
+Idade: 0
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: 
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425813140
+
+Codigo: 5
+Nome do Jogador: K
+Idade: 0
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: 
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425812676
+
+Codigo: 4
+Nome do Jogador: 
+Idade: 0
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: 
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425812212
+
+Codigo: 3
+Nome do Jogador: π
+Idade: 0
+Peso: 0.000000
+Altura: 0.000000
+Posi√ß√£o que atua: 
+Valor de compra: 0.00
+Valor de passe:0.00
+Sal√°rio: 0.00
+Status do jogador: 1425811748
+
+Codigo: 2
+Nome do Jogador: xuxa
+Idade: 32
+Peso: 80.000000
+Altura: 180.000000
+Posi√ß√£o que atua: lateral
+Valor de compra: 3000.00
+Valor de passe:3500.00
+Sal√°rio: 4000.00
+Status do jogador: 1425811284
+
+Codigo: 1
+Nome do Jogador: sla
+Idade: 23
+Peso: 80.000000
+Altura: 180.000000
+Posi√ß√£o que atua: lateral
+Valor de compra: 20.00
+Valor de passe:20.00
+Sal√°rio: 20.00
+Status do jogador: 1425806708
+

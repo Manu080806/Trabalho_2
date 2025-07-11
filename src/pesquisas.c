@@ -6,24 +6,24 @@
 #include "../includes/pesquisas.h"
 
 //Localizar jogador por nome
-no_jogadores pesquisa_nome(string nome, no_jogadores *lista_jogadores){
+no_jogadores *pesquisa_nome(string nome, no_jogadores *lista_jogadores){
     while (lista_jogadores) {
         if (strcmp(nome, lista_jogadores->dados_jogador.nome_jogador) == 0) {
-            return *lista_jogadores;
+            return lista_jogadores;
         }
         lista_jogadores = lista_jogadores->prox_jogador;
     }
-    return *lista_jogadores;
+    return lista_jogadores;
 }
 //Localizar jogadores por posição em que atua
-no_jogadores posicao_atua(string pos_atua , no_jogadores *lista_jogadores ){
+no_jogadores *posicao_atua(string pos_atua , no_jogadores *lista_jogadores ){
     while (lista_jogadores) {
         if (strcmp(pos_atua, lista_jogadores->dados_jogador.nome_jogador) == 0) {
-            return *lista_jogadores;
+            return lista_jogadores;
         }
         lista_jogadores = lista_jogadores->prox_jogador;
     }
-    return *lista_jogadores;
+    return lista_jogadores;
 }
 //Localizar jogos realizados pelo nome do time adversário
 no_partidas time_adversario(string adversario , no_partidas *lista_partidas){
@@ -57,6 +57,7 @@ no_jogadores maior_salario(no_jogadores *lista_jogadores){
             MaiorSalario = lista_jogadores->dados_jogador.salario ;
             posMaiorSalario = lista_jogadores;
         }
+        lista_jogadores = lista_jogadores->prox_jogador;
     }
     mostrar_dados_jogadores(posMaiorSalario);
 
