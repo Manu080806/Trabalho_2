@@ -95,7 +95,7 @@ int main(){
                             getchar();
                             printf("Contra qual time sao as partidas que desejas? ");
                             fgets(nome_timeadv, T_STR, stdin);
-                            getchar();
+                            retirar_enter(nome_timeadv);
                             confrontos(lista_partidas.ptrlist_partida , nome_timeadv); 
                             break;
 
@@ -124,27 +124,32 @@ int main(){
                             getchar();
                             printf("Qual o jogador que desejas localizar? ");
                             fgets(nome, T_STR, stdin);
-                            getchar();
-                            pesquisa_nome(nome, lista_jogadores.ptrlist_jogadores);
+                            retirar_enter(nome);
+                            
+                            *aux_jog = pesquisa_nome(nome, lista_jogadores.ptrlist_jogadores);
+
+                            if (aux_jog != NULL) {
+                                mostrar_dados_jogadores(aux_jog);
+                            } else {
+                                printf("Nenhum jogador com o nome %s foi encontrado\n", nome);
+                            }
                             break;
 
                         case 2://Localizar jogadores por posição em que atua
-                        getchar();
-                        printf("Qual a posicao que desejas pesquisar? ");
-                        fgets(pos_atua, T_STR, stdin);
-                        retirar_enter(pos_atua);
+                            getchar();
+                            printf("Qual a posicao que desejas pesquisar? ");
+                            fgets(pos_atua, T_STR, stdin);
+                            retirar_enter(pos_atua);
 
-                        *aux_jog = posicao_atua(pos_atua, lista_jogadores.ptrlist_jogadores);
+                            *aux_jog = posicao_atua(pos_atua, lista_jogadores.ptrlist_jogadores);
 
-                        if (aux_jog != NULL) {
-                            printf("Codigo: %hhi\n" , aux_jog->dados_jogador.codigo);
-                            printf("Nome: %s\n", aux_jog->dados_jogador.nome_jogador);
-                            printf("Posicao que atua: %s\n" , aux_jog->dados_jogador.posicao_jogador);
-                        } else {
-                            printf("Nenhum jogador encontrado na posicao '%s'.\n", pos_atua);
-                        }
-                        break;
-                            posicao_atua(pos_atua , lista_jogadores.ptrlist_jogadores );
+                            if (aux_jog != NULL) {
+                                printf("Codigo: %hhi\n" , aux_jog->dados_jogador.codigo);
+                                printf("Nome: %s\n", aux_jog->dados_jogador.nome_jogador);
+                                printf("Posicao que atua: %s\n" , aux_jog->dados_jogador.posicao_jogador);
+                            } else {
+                                printf("Nenhum jogador encontrado atuando na posicao %s\n", pos_atua);
+                            }
                             break;
 
                         case 3://Localizar jogos realizados pelo nome do time adversário
@@ -179,7 +184,7 @@ int main(){
                             getchar();
                             printf("Digite o nome do arquivo e finalize com: .txt \n");
                             fgets(nome_arq, T_STR, stdin);
-                            getchar();
+                            retirar_enter(nome_arq);
                             exportar_jogadores_arq_txt(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
@@ -187,7 +192,7 @@ int main(){
                             getchar();
                             printf("Digite o nome do arquivo e finalize com: .txt \n");
                             fgets(nome_arq, T_STR, stdin);
-                            getchar();
+                            retirar_enter(nome_arq);
                             exportar_partidas_arq_txt(nome_arq, lista_partidas.ptrlist_partida);
                             break;
 
@@ -195,7 +200,7 @@ int main(){
                             getchar();
                             printf("Digite o nome do arquivo e finalize com: .csv \n");
                             fgets(nome_arq, T_STR, stdin);
-                            getchar();
+                            retirar_enter(nome_arq);
                             exportar_jogadores_arq_csv(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
@@ -203,7 +208,7 @@ int main(){
                             getchar();
                             printf("Digite o nome do arquivo e finalize com: .csv \n");
                             fgets(nome_arq, T_STR, stdin);
-                            getchar();
+                            retirar_enter(nome_arq);
                             exportar_partidas_arq_csv(nome_arq, lista_partidas.ptrlist_partida);
                             break;
 
@@ -211,7 +216,7 @@ int main(){
                             getchar();
                             printf("Digite o nome do arquivo e finalize com: .html \n");
                             fgets(nome_arq, T_STR, stdin);
-                            getchar();
+                            retirar_enter(nome_arq);
                             exportar_jogadores_html(nome_arq,lista_jogadores.ptrlist_jogadores);
                             break;
 
@@ -219,7 +224,7 @@ int main(){
                             getchar();
                             printf("Digite o nome do arquivo e finalize com: .html \n");
                             fgets(nome_arq, T_STR, stdin);
-                            getchar();
+                            retirar_enter(nome_arq);
                             exportar_partidas_html(nome_arq, lista_partidas.ptrlist_partida);
                             break;
                         }
